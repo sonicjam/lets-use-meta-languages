@@ -1,0 +1,276 @@
+/*
+ * Written by Yu Inao
+ * Public domain
+ */
+body {
+  background: -webkit-radial-gradient(center bottom, circle farthest-corner, #000, #060606, #333);
+  background: -moz-radial-gradient(center bottom, circle farthest-corner, #000, #060606, #333);
+  background: radial-gradient(center bottom, circle farthest-corner, #000, #060606, #333);
+  background-color: #000;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #ccc;
+  font-family: "Helvetica", sans-serif;
+  font-size: 200%;
+  text-shadow: 1px 1px 0 #7f7f7f;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  border-bottom: none;
+}
+a:link {
+  border-bottom: 1px dashed #fff;
+  color: #fff;
+  text-decoration: none;
+}
+a:visited {
+  border-bottom: none;
+  color: #cfcfcf;
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: center;
+}
+ul > li {
+  line-height: 200%;
+}
+.fallback-message {
+  display: none;
+}
+.impress-not-supported > .fallback-message {
+  display: block;
+}
+.step {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  opacity: 0;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+  width: 1280px;
+}
+.step.active {
+  opacity: 1;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+}
+.step.message {
+  font-size: 200%;
+}
+.step.question {
+  background-image: url("../img/ShinyGrey.jpg");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #333;
+  height: 500px;
+  font-size: 1000%;
+  text-align: center;
+  text-shadow: -3px -3px 0 #fff, 3px -3px 0 #fff, -3px 3px 0 #fff, 3px 3px 0 #fff;
+}
+.step.question p {
+  line-height: 150%;
+  margin: 0;
+}
+.hint {
+  background-color: #808080;
+  top: 60%;
+  left: 0;
+  opacity: 0;
+  padding: 0 1em;
+  position: fixed;
+  text-align: center;
+  -webkit-transition: opacity 1s;
+  -moz-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  transition: opacity 1s;
+  width: 100%;
+}
+.hint > p {
+  color: #fff;
+  font-size: 50%;
+  font-weight: bolder;
+  line-height: 100%;
+}
+.impress-on-bored > .hint {
+  opacity: 0.5;
+  -webkit-transition: opacity 1s 10s;
+  -moz-transition: opacity 1s 10s;
+  -o-transition: opacity 1s 10s;
+  transition: opacity 1s 10s;
+}
+@-moz-keyframes endo {
+  0% {
+    top: 100%;
+    left: 100%;
+  }
+
+  100% {
+    top: 80%;
+    left: 70%;
+  }
+}
+@-webkit-keyframes endo {
+  0% {
+    top: 100%;
+    left: 100%;
+  }
+
+  100% {
+    top: 80%;
+    left: 70%;
+  }
+}
+@-o-keyframes endo {
+  0% {
+    top: 100%;
+    left: 100%;
+  }
+
+  100% {
+    top: 80%;
+    left: 70%;
+  }
+}
+@-ms-keyframes endo {
+  0% {
+    top: 100%;
+    left: 100%;
+  }
+
+  100% {
+    top: 80%;
+    left: 70%;
+  }
+}
+@keyframes endo {
+  0% {
+    top: 100%;
+    left: 100%;
+  }
+
+  100% {
+    top: 80%;
+    left: 70%;
+  }
+}
+@-moz-keyframes inao {
+  0% {
+    top: 90%;
+    left: 0;
+  }
+
+  100% {
+    top: 80%;
+    left: 30%;
+  }
+}
+@-webkit-keyframes inao {
+  0% {
+    top: 90%;
+    left: 0;
+  }
+
+  100% {
+    top: 80%;
+    left: 30%;
+  }
+}
+@-o-keyframes inao {
+  0% {
+    top: 90%;
+    left: 0;
+  }
+
+  100% {
+    top: 80%;
+    left: 30%;
+  }
+}
+@-ms-keyframes inao {
+  0% {
+    top: 90%;
+    left: 0;
+  }
+
+  100% {
+    top: 80%;
+    left: 30%;
+  }
+}
+@keyframes inao {
+  0% {
+    top: 90%;
+    left: 0;
+  }
+
+  100% {
+    top: 80%;
+    left: 30%;
+  }
+}
+@-moz-keyframes miyauchi {
+  0% {
+    top: 100%;
+    left: 20%;
+  }
+
+  100% {
+    top: 80%;
+    left: 50%;
+  }
+}
+@-webkit-keyframes miyauchi {
+  0% {
+    top: 100%;
+    left: 20%;
+  }
+
+  100% {
+    top: 80%;
+    left: 50%;
+  }
+}
+@-o-keyframes miyauchi {
+  0% {
+    top: 100%;
+    left: 20%;
+  }
+
+  100% {
+    top: 80%;
+    left: 50%;
+  }
+}
+@-ms-keyframes miyauchi {
+  0% {
+    top: 100%;
+    left: 20%;
+  }
+
+  100% {
+    top: 80%;
+    left: 50%;
+  }
+}
+@keyframes miyauchi {
+  0% {
+    top: 100%;
+    left: 20%;
+  }
+
+  100% {
+    top: 80%;
+    left: 50%;
+  }
+}

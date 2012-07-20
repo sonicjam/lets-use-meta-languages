@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>メタ言語を使おう！</title>
+    <meta name="author" content="Yu Inao">
+    <meta name="rights-standard" content="pd">
+    <link rel="stylesheet" href="//normalize-css.googlecode.com/svn/trunk/normalize.min.css">
+    <link rel="stylesheet" href="./res/google-code-prettify/sunburst.css">
+    <link rel="stylesheet" href="./css/index.css">
+  </head>
+  <body class="impress-not-supported">
+    <section class="fallback-message">
+      <p>impress.js を使っています。Chrome, Safari, Firefox のどれか最新版でご覧下さい。</p>
+    </section>
+    <div id="impress">
+      <section id="bore" data-x="0" data-y="0" data-z="0" data-rotate="0" class="step">
+        <h1>メタ言語を使おう！</h1>
+      </section>
+      <section class="step message">
+        <p>最近では HTML とか CSS とか JavaScript をクソマジメに書いていると、バカにされる風潮がある。</p>
+      </section>
+      <section class="step message">
+        <p>そういえば、SCSS とかいう変な CSS が巷では流行っているらしい。</p>
+      </section>
+      <section class="step message">
+        <p>なんでも、「メタ言語」というモノを使って書くのがイマドキの新常識なんだとか。</p>
+      </section>
+      <section class="step">
+        <h1>メタ言語とは</h1>
+      </section>
+      <section class="step">
+        <h1>CoffeeScript</h1>
+        <p>こう書くと</p>
+        <pre class="prettyprint">name = 'メタ言語'
+$('a').on 'click', (ev) -&gt;
+  alert(&quot;こんにちは、\#{name}。&quot;)</pre>
+        <p>こうなる</p>
+        <pre class="prettyprint">var name = 'メタ言語';
+$('a').on('click', function (ev) {
+  alaert('こんにちは、' + name + '。');
+});</pre>
+      </section>
+      <section class="step">
+        <h1>Stylus</h1>
+        <p>こう書くと</p>
+        <pre class="prettyprint">black = rgb(0,0,0);
+white = rgb(255,255,255);
+body
+  background-color: black
+  color: white</pre>
+        <p>こうなる</p>
+        <pre class="prettyprint">body {
+  background-color: #000;
+  color: fff;
+}</pre>
+      </section>
+      <section class="step">
+        <h1>Jade</h1>
+        <p>こう書くと</p>
+        <pre class="prettyprint">!!! 5
+html
+  body
+    h1 おれのホームページ</pre>
+        <p>こうなる</p>
+        <pre class="prettyprint">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;body&gt;
+    &lt;h1&gt;おれのホームページ&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+      </section>
+      <section class="step message">
+        <p>元の言語よりシンプルに書けるのが「メタ言語」というものらしい。</p>
+      </section>
+      <section class="step">
+        <h1>メタ言語の特徴</h1>
+      </section>
+      <section class="step">
+        <ul>
+          <li>元の言語より短く書ける</li>
+          <li>元の言語にはない便利な機能が追加されている。</li>
+          <li>構造を括弧 { ... } ではなく、インデントで表現するモノが多い。</li>
+          <li>あくまで元の言語に変換するための「メタ」言語という立ち位置。</li>
+          <li>割と流行っているらしい。</li>
+        </ul>
+      </section>
+      <section class="step message">
+        <p>「元の言語に変換する」...?</p>
+      </section>
+      <section class="step">
+        <h1>メタ言語の使い方</h1>
+      </section>
+      <section class="step">
+        <h1>インストール</h1>
+        <pre class="prettyprint">npm install coffee-script stylus jade -g</pre>
+      </section>
+      <section class="step">
+        <h1>変換コマンド</h1>
+        <p>CoffeeScript</p>
+        <pre class="prettyprint">coffee /path/to/script.coffee</pre>
+        <p>Stylus</p>
+        <pre class="prettyprint">stylus /path/to/style.styl</pre>
+        <p>Jade</p>
+        <pre class="prettyprint">jade /path/to/page.jade</pre>
+      </section>
+      <section class="step message">
+        <p>毎回これらのコマンドを打つのは面倒なので、Makefile の仕組みに習った Cakefile をつくると良いらしい。</p>
+      </section>
+      <section class="step">
+        <h1>Cakefile つくった</h1>
+        <pre class="prettyprint">https://gist.github.com/3145402</pre>
+      </section>
+      <section class="step">
+        <h1>Cakefile で一発変換</h1>
+        <pre class="prettyprint">cake build</pre>
+      </section>
+      <section class="step message">
+        <p>...</p>
+      </section>
+      <section class="step message">
+        <p>結局手間を増やして何が嬉しいのか。</p>
+      </section>
+      <session class="step question">
+        <p>WHY</p>
+      </session>
+      <section class="step">
+        <h1>たとえば CoffeeScript だったら</h1>
+        <ul>
+          <li>初心者が js そのままを書くより安全で早いコードが書ける。</li>
+          <li>バグを入れこみ易い部分を回避する仕組みがある。</li>
+          <li>オブジェクト指向をより直感的に利用できる。</li>
+          <li>インデントによる構造化で書き手の自己主張を最小限に留め、誰が見ても同じ書き方、読みやすいコードを共有できる。</li>
+        </ul>
+      </section>
+      <section class="step">
+        <h1>たとえば Stylus だったら</h1>
+        <ul>
+          <li>変数・四則演算・ミックスイン等、プログラミング的な DRY の要素を使って、メンテナンスし易い CSS が書ける。</li>
+          <li>出力される CSS はミニファイ化したものを出力する事も可能なので、プロダクトのパフォーマンスチューニングにも繋がる。</li>
+          <li>インデントによる構造化で書き手の自己主張を最小限に留め、誰が見ても同じ書き方、読みやすいコードを共有できる。</li>
+        </ul>
+      </section>
+      <section class="step">
+        <h1>たとえば Jade だったら</h1>
+        <ul>
+          <li>サーバーサイドテンプレートエンジンとしても使える。</li>
+          <li>閉じタグがないので閉じ忘れの心配がない。</li>
+          <li>インデントによる構造化で書き手の自己主張を最小限に留め、誰が見ても同じ書き方、読みやすいコードを共有できる。</li>
+        </ul>
+      </section>
+      <section class="step message">
+        <p>手間をかけるメリットは十分にあるし、手間を最小限にする仕組みもある。</p>
+      </section>
+      <section class="step">
+        <h1>いろいろなメタ言語</h1>
+      </section>
+      <section class="step">
+        <h1>JavaScript</h1>
+        <ul>
+          <li>CoffeeScript <a href="http://coffeescript.org/">http://coffeescript.org/</a></li>
+        </ul>
+      </section>
+      <section class="step">
+        <h1>CSS</h1>
+        <ul>
+          <li>LESS <a href="http://lesscss.org/">http://lesscss.org/</a></li>
+          <li>Sass <a href="http://sass-lang.com/">http://sass-lang.com/</a></li>
+          <li>SassyCSS (SCSS) <a href="http://sass-lang.com/">http://sass-lang.com/</a></li>
+          <li>Stylus <a href="http://learnboost.github.com/stylus/">http://learnboost.github.com/stylus/</a></li>
+        </ul>
+      </section>
+      <section class="step">
+        <h1>HTML</h1>
+        <ul>
+          <li>Haml <a href="http://haml.info/">http://haml.info/</a></li>
+          <li>CoffeeKup <a href="http://coffeekup.org/">http://coffeekup.org/</a></li>
+          <li>Jade <a href="http://jade-lang.com/">http://jade-lang.com/</a></li>
+        </ul>
+      </section>
+      <section class="step">
+        <p>おわり。</p>
+      </section>
+    </div>
+    <div class="hint">
+      <p>スペースか方向キーで操作します。</p>
+    </div>
+    <script src="./js/impress.js"></script>
+    <script src="./res/google-code-prettify/prettify.js"></script>
+    <script>
+      impress().init();
+      prettyPrint();
+    </script>
+  </body>
+</html>

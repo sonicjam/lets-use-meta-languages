@@ -1,0 +1,143 @@
+/*!
+ * Written by Yu Inao
+ * Public domain
+ */
+
+// Mixins
+animation()
+  -webkit-animation: arguments
+  -moz-animation: arguments
+  animation: arguments
+box-sizing(val)
+  -webkit-box-sizing: val
+  -moz-box-sizing: val
+  box-sizing: val
+text-stroke(n c)
+  text-shadow: (n * -1) (n * -1) 0 c, n (n * -1) 0 c, (n * -1) n 0 c, n n 0 c
+transform()
+  -webkit-transform: arguments
+  -moz-transform: arguments
+  -o-transform: arguments
+transform-origin()
+  -webkit-transform-origin: arguments
+  -moz-transform-origin: arguments
+  -o-transform-origin: arguments
+transition()
+  -webkit-transition: arguments
+  -moz-transition: arguments
+  -o-transition: arguments
+  transition: arguments
+
+// CSS3 animation definitions
+@keyframes endo
+  from
+    top: 100%
+    left: 100%
+  to
+    top: 80%
+    left: 70%
+@keyframes inao
+  from
+    top: 90%
+    left: 0
+  to
+    top: 80%
+    left: 30%
+@keyframes miyauchi
+  from
+    top: 100%
+    left: 20%
+  to
+    top: 80%
+    left: 50%
+
+// Basic layout
+// elements defined by appearence in the page
+body
+  background: -webkit-radial-gradient(center bottom, circle farthest-corner, rgb(0,0,0), rgb(6,6,6), rgb(51,51,51))
+  background: -moz-radial-gradient(center bottom, circle farthest-corner, rgb(0,0,0), rgb(6,6,6), rgb(51,51,51))
+  background: radial-gradient(center bottom, circle farthest-corner, rgb(0,0,0), rgb(6,6,6), rgb(51,51,51))
+  background-color: rgb(0,0,0)
+  box-sizing: border-box
+  color: rgb(204,204,204)
+  font-family: "Helvetica", sans-serif
+  font-size: 200%
+  text-shadow: 1px 1px 0 rgb(127,127,127)
+  -webkit-font-smoothing: antialiased
+
+a
+  border-bottom: none
+
+a:link
+  border-bottom: 1px dashed rgb(255,255,255)
+  color: rgb(255,255,255)
+  text-decoration: none
+
+a:visited
+  border-bottom: none
+  color: rgb(207,207,207)
+  text-decoration: none
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+  text-align: center
+
+ul > li
+  line-height: 200%
+
+// Default behaviours for impress.js
+// elements defined by appearence in the page
+.fallback-message
+  display: none
+.impress-not-supported > .fallback-message
+  display: block
+
+.step
+  box-sizing: border-box
+  opacity: 0
+  transition: 1s
+  width: 1280px
+.step.active
+  opacity: 1
+  transition: 1s
+
+.step.message
+  font-size: 200%
+
+.step.question
+  background-image: url('../img/ShinyGrey.jpg')
+  background-position: 50% 50%
+  background-repeat: no-repeat
+  background-size: cover
+  color: rgb(51,51,51)
+  height: 500px
+  font-size: 1000%
+  text-align: center
+  text-stroke: 3px rgb(255,255,255)
+
+.step.question p
+  line-height: 150%
+  margin: 0
+
+.hint
+  background-color: gray
+  top: 60%
+  left: 0
+  opacity: 0
+  padding: 0 1em
+  position: fixed
+  text-align: center
+  transition: opacity 1s
+  width: 100%
+.hint > p
+  color: white
+  font-size: 50%
+  font-weight: bolder
+  line-height: 100%
+.impress-on-bored > .hint
+  opacity: 0.5
+  transition: opacity 1s 10s
